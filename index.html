@@ -29,6 +29,7 @@
 		.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
 		.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
 	</style>
+    <script src:"//developers.kakao.com/sdk/js/kakao.min.js"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -404,7 +405,20 @@
 				<div class="col-md-12 text-center" style="font-weight: bold;" >
 					<a href="http://kko.to/3sDAN1_jM" target="_blank"><u>[큰지도보기]</u></a>
 					<a href="http://kko.to/I59U71V0H" target="_blank"><u>[길찾기]</u></a>
-					
+					<a href="#" onclick="navi();">
+                                        카카오내비
+                                        </a>
+<script type="text/javascript"> 
+kakao.init("c07bbbedbe6204bb405a0d5b4b3c37fa");
+function navi() {
+kakao.Navi.start({
+name: "거제삼성호텔",
+x: 128.6122393,
+y: 34.8962394,
+coordType: "wgs84"
+});
+}
+</script>
 				</div>
 				<div id="map" style="width:90%;height:450px; margin:auto" ></div>
 
