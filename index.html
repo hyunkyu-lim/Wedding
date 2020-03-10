@@ -405,13 +405,13 @@
 				<div class="col-md-12 text-center" style="font-weight: bold;" >
 					<a href="http://kko.to/3sDAN1_jM" target="_blank"><u>[큰지도보기]</u></a>
 					<a href="http://kko.to/I59U71V0H" target="_blank"><u>[길찾기]</u></a>
-					<a href="#" onclick="navi();">
+					<a id="navi" href="#" onclick="navi();">
                                         카카오내비
                                         </a>
 <script type="text/javascript"> 
-kakao.init("c07bbbedbe6204bb405a0d5b4b3c37fa");
+Kakao.init("c07bbbedbe6204bb405a0d5b4b3c37fa");
 function navi() {
-kakao.Navi.start({
+Kakao.Navi.start({
 name: "거제삼성호텔",
 x: 128.6122393,
 y: 34.8962394,
