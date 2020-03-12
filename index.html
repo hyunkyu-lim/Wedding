@@ -30,7 +30,7 @@
 		.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
 		.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
 	</style>
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="./js/kakao.min.js"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -55,7 +55,7 @@
 	    </div>
 	  </nav>
 
-	  <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/wedding/16x12_06.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
+	  <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/wedding/11.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
 	  	<div class="overlay"></div>
 			<!--<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>-->
 			<div class="container">
@@ -80,7 +80,8 @@
 		</section>
 
 		<section class="ftco-section ftco-about ftco-no-pt ftco-no-pb" id="groom-bride-section">
-    		<div class="row">
+			<div class="container">
+			<div class="row">
     			<div class="col-md-12">
     				<div class="wrap">
 			    		<div class="row d-flex">
@@ -91,8 +92,8 @@
 			    			<div class="col-md-6 py-md-5 text">
 			    				<div class="py-md-4">
 				    				<div class="row justify-content-start pb-3">
-						          <div class="col-md-12 ftco-animate p-4 p-lg-5 text-center">
-						          	<span class="subheading mb-4">Join us to celebrate <br>the wedding day of</span>
+						          <div class="col-md-12 ftcxso-animate p-4 p-lg-5 text-center">
+						          	<span class="subheading mb-4"> Join us to celebrate <br>the wedding day of</span>
 						            <h2 class="mb-4">Hyunkyu <span>&amp;</span> Eungyeong</h2>
 						            <span class="icon flaticon-rose-variant-outline-with-vines"></span>
 						            <span class="subheading">Which is celebration on</span>
@@ -106,7 +107,8 @@
 			        </div>
 			      </div>
 		      </div>
-		    </div>
+			</div>
+		</div>
     </section>
 	
     <section class="ftco-section bg-section">
@@ -403,31 +405,34 @@
 			</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 text-center" style="font-weight: bold;" >
-					<a href="http://kko.to/3sDAN1_jM" target="_blank"><u>[큰지도보기]</u></a>
+				<div class="col-md-12 text-center" style="font-weight: bold; padding-bottom:10px;" >
+					<a href="http://kko.to/3sDAN1_jM" target="_blank">
+						<img src ="images/icon/kakaomap.jpg" style="width: 60px; height:60px;"/>
+					</a>
 					<a href="http://kko.to/I59U71V0H" target="_blank"><u>[길찾기]</u></a>
 					<a id="navi" href="javascript:void(0);" onclick="navi();">
-                                        카카오내비
-                                        </a>
-<script type="text/javascript"> 
-Kakao.init("c07bbbedbe6204bb405a0d5b4b3c37fa");
-function navi() {
-Kakao.Navi.start({
-name: "거제삼성호텔",
-x: 128.6122393,
-y: 34.8962394,
-coordType: "wgs84"
-});
-}
-</script>
+						<img src="images/icon/kakaonavi.png" style="width: 60px; height:60px;" />
+                    </a>
+					<script type="text/javascript"> 
+					Kakao.init("c07bbbedbe6204bb405a0d5b4b3c37fa");
+					function navi() {
+					Kakao.Navi.start({
+					name: "거제삼성호텔",
+					x: 128.6122393,
+					y: 34.8962394,
+					coordType: "wgs84"
+					});
+					}
+					</script>
 				</div>
-				<div id="map" style="width:90%;height:450px; margin:auto" ></div>
+				
+				<div id="map" style="width:80%;height:300px; margin:auto" ></div>
 
-				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c07bbbedbe6204bb405a0d5b4b3c37fa"></script>
+				<script type="text/javascript" src="./js/sdk.json"></script>
 				<script>
 				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 					mapOption = { 
-						center: new kakao.maps.LatLng(34.8962394, 128.6122393), // 지도의 중심좌표
+						center: new kakao.maps.LatLng(34.8972394, 128.6122393), // 지도의 중심좌표
 						level: 5 // 지도의 확대 레벨
 					};
 
@@ -471,7 +476,7 @@ coordType: "wgs84"
 				infowindow.open(map, marker); 
 
 				*/
-				var imageSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+				var imageSrc = './images/icon/weddings.png', // 마커이미지의 주소입니다    
 					imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
 					imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
@@ -492,7 +497,7 @@ coordType: "wgs84"
 				var content = '<div class="customoverlay">' +
 					'  <a href="http://kko.to/3sDAN1_jM" target="_blank">' +
 					'    <span class="title" style="font-size:15px">현규' +
-					'    <span style="color:#FF0000; font-size:20px">♥</span>' +
+					'    <span style="color:#FF0000; font-size:18px">♥</span>' +
 					'	  은경 결혼식장</span>' +
 					'  </a>' +
 					'</div>';
@@ -514,55 +519,7 @@ coordType: "wgs84"
     	</div>
     </section>
 
-    <section class="ftco-section bg-secondary" id="rsvp-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-12 text-center heading-section ftco-animate">
-          	<span class="clone">RSVP</span>
-            <h2 class="mb-3">Are Your Attending?</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-        	<div class="col-md-7">
-        		<form action="#" class="rsvp-form ftco-animate">
-	    				<div class="">
-		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Name">
-		    				</div>
-		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Your email">
-		    				</div>
-	    				</div>
-	    				<div class="">
-	    					<div class="form-group">
-		    					<div class="form-field">
-          					<div class="select-wrap">
-                      <div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                      	<option value="">Guest</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                      </select>
-                    </div>
-		              </div>
-		    				</div>
-	    				</div>
-	    				<div class="">
-	    					<div class="form-group">
-		              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
-		            </div>
-		            <div class="form-group">
-		              <input type="submit" value="I am attending" class="btn btn-primary py-3 px-4">
-		            </div>
-	    				</div>
-	    			</form>
-        	</div>
-        </div>
-    	</div>
-    </section>
+    
 
     <section class="ftco-section" id="gallery-section">
     	<div class="container-fluid px-md-4">
@@ -573,103 +530,103 @@ coordType: "wgs84"
           </div>
         </div>
         <div class="row">
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_01.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_01.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/1.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_01_01.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_01_01.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/2.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/2.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_02.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_02.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/3.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/3.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_02_01.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_02_01.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/4.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/4.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_03.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_03.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/5.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/5.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_03_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_03_1.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/6.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/6.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_04.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_04.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/7.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/7.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
-        	<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_04_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_04_1.jpg);">
+        	<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/8.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/8.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_05.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_05.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/9.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/9.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_05_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_05_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/10.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/10.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_06.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_06.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/11.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/11.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_06_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_06_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/12.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/12.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_07.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_07.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/13.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/13.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_07_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_07_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/14.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/14.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_08.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_08.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/15.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/15.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_08_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_08_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/16.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_09.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_09.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/17.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/17.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_09_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_09_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/18.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/18.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_10_1.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_10_1.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/19.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/19.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
 			</div>
-			<div class="col-sm-3 ftco-animate">
-        		<a href="images/wedding/16x12_10_2.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/16x12_10_2.jpg);">
+			<div class="col-sm-6 ftco-animate">
+        		<a href="images/wedding/20.jpg" class="gallery img image-popup d-flex align-items-center justify-content-center" style="background-image: url(images/wedding/20.jpg);">
         			<div class="icon d-flex align-items-center justify-content-center"><span class="ion-ios-image"></span></div>
         		</a>
         	</div>
